@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_granted" translatable="false">Permission already granted of requestCode</string>
+    <string name="permission_denied">The functionality of the application may be restricted without permission</string>
+
+    <string name="permissions_granted" translatable="false">Permissions already granted of requestCode</string>
+    <string name="permissions_denied">The functionality of the application may be restricted without permissions</string>
+
+    <string name="permission_message">The permission is needed for the normal functionality of the app, please enable it</string>
+    <string name="permissions_message">The permissions are needed for the normal functionality of the app, please enable it all</string>
+
+    <string name="permission_title">Request permission</string>
+    <string name="permissions_title">Request permissions</string>
+
+    <string name="permission_positive_button">Accept</string>
+    <string name="permission_negative_button">Cancel</string>
+
+    <string name="gps_provider_disable">GPS provider don\'t available</string>
+    <string name="network_provider_disable">Network provider don\'t available</string>
+    <string name="passive_provider_disable">Passive provider don\'t available</string>
+
+    <string name="intent_select_image_from_gallery">Select image</string>
+</resources>

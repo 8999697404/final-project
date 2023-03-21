@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".settings.InfoFragment">
+
+    <!-- region Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <!-- endregion -->
+
+    <TextView
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/settings_info_description_title"
+            android:layout_height="wrap_content" />
+
+    <TextView
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/settings_info_description_content"
+            android:layout_height="wrap_content" />
+
+    <TextView
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:text="@string/settings_info_version_title"
+            android:layout_height="wrap_content" />
+
+    <TextView
+            android:id="@+id/lbl_version"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            tools:text="0.0.0"
+            android:layout_height="wrap_content" />
+
+</LinearLayout>

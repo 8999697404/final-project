@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".alert.AlertDetailFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+            android:id="@+id/layout_form"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toEndOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/guideline_top">
+
+        <LinearLayout
+                android:id="@+id/layout_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                    android:id="@+id/img_date"
+                    android:layout_width="@dimen/contact_detail_icon_size"
+                    android:layout_height="@dimen/contact_detail_icon_size"
+                    android:layout_marginEnd="@dimen/contact_detail_icon_margin_end"
+                    android:contentDescription="@string/alert_detail_img_date"
+                    android:src="@drawable/ic_baseline_date_range_24"
+                    android:tint="@color/colorPrimary" />
+
+            <TextView
+                    android:id="@+id/lbl_date"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="11 agosto 2020 24:54:37" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/layout_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                    android:id="@+id/img_location"
+                    android:layout_width="@dimen/contact_detail_icon_size"
+                    android:layout_height="@dimen/contact_detail_icon_size"
+                    android:layout_marginEnd="@dimen/contact_detail_icon_margin_end"
+                    android:contentDescription="@string/alert_detail_img_location"
+                    android:src="@drawable/ic_baseline_place_24"
+                    android:tint="@color/colorPrimary" />
+
+            <TextView
+                    android:id="@+id/lbl_location"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="12.123456, -12.123456" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <WebView
+            android:id="@+id/webview"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/layout_form" />
+
+    <!-- region AlertContactsFilled -->
+    <TextView
+            android:id="@+id/lbl_alert_contacts_title"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/alert_detail_recycler_title"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/webview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_alert_contact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/lbl_alert_contacts_title"
+            tools:listitem="@layout/item_alert_details" />
+    <!-- endregion AlertContactsFilled -->
+
+    <!-- region AlertContactsEmpty -->
+    <LinearLayout
+            android:id="@+id/layout_empty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/webview"
+            tools:ignore="UseCompoundDrawables">
+
+        <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/alert_detail_alert_contact_empty_list"
+                android:textAlignment="center" />
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="-24dp"
+                android:contentDescription="@string/alert_detail_alert_Contact_empty_list_img_decorator"
+                android:src="@drawable/drawkit_directions_colour_400px" />
+
+    </LinearLayout>
+    <!-- endregion AlertContactsEmpty -->
+
+    <!-- region Guides -->
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.90" />
+    <!-- endregion -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+    android:orientation="vertical"
+    tools:context=".settings.SettingsFragment">
+
+    <!-- region Alert -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/settings_item_option_padding_vertical">
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_category_alert"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_widget_start"
+            app:layout_constraintStart_toEndOf="@+id/guideline_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include layout="@layout/guidelines_settings" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_sensitivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="@dimen/settings_item_option_padding_vertical">
+
+            <ImageView
+                android:id="@+id/img_sensitivity"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/settings_category_alert_sensitivity_image"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_screen_rotation_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_icon"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintStart_toEndOf="@id/guideline_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/lbl_title_sensitivity"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_alert_sensitivity" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/lbl_items_sensitivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:inputType="none"
+                    tools:ignore="LabelFor" />
+
+                <TextView
+                    android:id="@+id/lbl_selected_sensitivity"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="Medium" />
+
+            </LinearLayout>
+
+            <include layout="@layout/guidelines_settings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_vibration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="@dimen/settings_item_option_padding_vertical">
+
+            <ImageView
+                android:id="@+id/img_vibration"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/settings_category_alert_vibration_image"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_vibration_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_icon"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintStart_toEndOf="@id/guideline_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/lbl_title_vibration"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_alert_vibration" />
+
+                <TextView
+                    android:id="@+id/lbl_summary_vibration"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_alert_vibration_summary"
+                    android:textColor="@android:color/darker_gray" />
+
+            </LinearLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/sw_vibration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_widget_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include layout="@layout/guidelines_settings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="@dimen/settings_item_option_padding_vertical">
+
+            <ImageView
+                android:id="@+id/img_location"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/settings_category_alert_location_image"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_place_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_icon"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintStart_toEndOf="@id/guideline_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/lbl_title_location"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_alert_location" />
+
+                <TextView
+                    android:id="@+id/lbl_summary_location"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_alert_location_summary"
+                    android:textColor="@android:color/darker_gray" />
+
+            </LinearLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/sw_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_widget_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include layout="@layout/guidelines_settings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="@dimen/settings_item_option_padding_vertical">
+
+            <ImageView
+                android:id="@+id/img_map"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/settings_category_alert_map_image"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_map_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_icon"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintStart_toEndOf="@id/guideline_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/lbl_title_map"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_alert_map" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/lbl_items_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:inputType="none"
+                    tools:ignore="LabelFor" />
+
+                <TextView
+                    android:id="@+id/lbl_selected_map"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="Google Maps" />
+
+            </LinearLayout>
+
+            <include layout="@layout/guidelines_settings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <!-- endregion Alert -->
+
+    <!-- region General -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/settings_item_option_padding_vertical">
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_category_general"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_widget_start"
+            app:layout_constraintStart_toEndOf="@+id/guideline_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include layout="@layout/guidelines_settings" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_default_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="@dimen/settings_item_option_padding_vertical">
+
+            <ImageView
+                android:id="@+id/img_default_message"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/settings_category_general_default_message_image"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_sms_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_icon"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintStart_toEndOf="@id/guideline_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/lbl_title_default_message"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_general_default_message" />
+
+                <TextView
+                    android:id="@+id/lbl_selected_default_message"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="@string/alert_message_default" />
+
+            </LinearLayout>
+
+            <include layout="@layout/guidelines_settings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_clean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="@dimen/settings_item_option_padding_vertical">
+
+            <ImageView
+                android:id="@+id/img_clean"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/settings_category_general_clean_image"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_delete_forever_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_icon"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintStart_toEndOf="@id/guideline_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/lbl_title_clean"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_general_clean" />
+
+                <TextView
+                    android:id="@+id/lbl_summary_clean"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_general_clean_summary"
+                    android:textColor="@android:color/darker_gray" />
+
+            </LinearLayout>
+
+            <include layout="@layout/guidelines_settings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <!-- endregion General -->
+
+    <!-- region About -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/settings_item_option_padding_vertical">
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_category_about"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_widget_start"
+            app:layout_constraintStart_toEndOf="@+id/guideline_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include layout="@layout/guidelines_settings" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_privacy_policy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="16dp">
+
+            <ImageView
+                android:id="@+id/img_privacy_policy"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/settings_category_about_privacy_policy_image"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_security_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_icon"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintStart_toEndOf="@id/guideline_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/lbl_title_privacy_policy"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_about_privacy_policy" />
+
+            </LinearLayout>
+
+            <include layout="@layout/guidelines_settings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_terms_conditions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="16dp">
+
+            <ImageView
+                android:id="@+id/img_terms_conditions"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/settings_category_about_terms_conditions_image"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_library_books_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_icon"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintStart_toEndOf="@id/guideline_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/lbl_title_terms_conditions"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_about_terms_conditions" />
+
+            </LinearLayout>
+
+            <include layout="@layout/guidelines_settings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layout_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="16dp">
+
+            <ImageView
+                android:id="@+id/img_information"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/settings_category_about_information_image"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_info_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end_icon"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_widget_start"
+                app:layout_constraintStart_toEndOf="@id/guideline_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/lbl_title_information"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_category_about_information" />
+
+            </LinearLayout>
+
+            <include layout="@layout/guidelines_settings" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <!-- endregion About -->
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+    compileSdkVersion DefaultConfig.compileSdk
+    buildToolsVersion DefaultConfig.buildTools
+
+    defaultConfig {
+        applicationId "com.luisenricke.botonpanico"
+        minSdkVersion DefaultConfig.minSdk
+        targetSdkVersion DefaultConfig.targetSdk
+
+        versionCode App.versionCode
+        versionName App.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = DefaultConfig.jvm
+        targetCompatibility = DefaultConfig.jvm
+    }
+
+    kotlinOptions {
+        jvmTarget = DefaultConfig.jvm.toString()
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(Modules.androidExt)
+    implementation project(Modules.kotlinExt)
+    implementation project(Modules.room)
+
+    implementation DefaultConfig.kotlin
+
+    implementation AndroidLib.appCompat
+    implementation AndroidLib.coreKtx
+    implementation AndroidLib.fragmentKtx
+    implementation AndroidLib.lifecycleExt
+    implementation AndroidLib.legacy
+
+    implementation AndroidLib.navigationFragmentKtx
+    implementation AndroidLib.navigationUIKtx
+
+    implementation ViewLib.materialDesign
+    implementation ViewLib.constraintLayout
+    implementation ViewLib.recyclerview
+    implementation ViewLib.circleImageView
+
+    implementation RoomLib.runtime
+    implementation 'androidx.test:core-ktx:1.4.0'
+    testImplementation project(path: ':app')
+    kapt RoomLib.compiler
+    implementation RoomLib.rxJava
+    testImplementation RoomLib.testing
+
+    testImplementation TestLib.junit
+    testImplementation TestLib.robolectric
+    androidTestImplementation TestLib.junitExt
+    androidTestImplementation TestLib.espresso
+
+    implementation ToolLib.timber
+}

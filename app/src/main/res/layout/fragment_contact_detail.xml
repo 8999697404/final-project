@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".contacts.ContactDetailFragment">
+
+    <!-- region Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <!-- endregion -->
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/img_profile"
+            android:layout_width="@dimen/contact_detail_profile_image_size"
+            android:layout_height="@dimen/contact_detail_profile_image_size"
+            android:contentDescription="@string/contact_detail_img_image"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_baseline_person_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline_top"
+            tools:background="#80FFEB3B" />
+
+    <TextView
+            android:id="@+id/lbl_name"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toEndOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/img_profile"
+            tools:text="Luis Enrique Villalobos Melendez" />
+
+    <LinearLayout
+            android:id="@+id/layout_form"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toEndOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/lbl_name">
+
+        <LinearLayout
+                android:id="@+id/layout_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                    android:id="@+id/img_phone"
+                    android:layout_width="@dimen/contact_detail_icon_size"
+                    android:layout_height="@dimen/contact_detail_icon_size"
+                    android:layout_marginEnd="@dimen/contact_detail_icon_margin_end"
+                    android:contentDescription="@string/contact_detail_img_phone"
+                    android:src="@drawable/ic_baseline_phone_24"
+                    android:tint="@color/colorPrimary" />
+
+            <TextView
+                    android:id="@+id/lbl_phone"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="XXX XXX XXXX" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/layout_relationship"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/contact_detail_form_margin_top"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                    android:id="@+id/img_relationship"
+                    android:layout_width="@dimen/contact_detail_icon_size"
+                    android:layout_height="@dimen/contact_detail_icon_size"
+                    android:layout_marginEnd="@dimen/contact_detail_icon_margin_end"
+                    android:contentDescription="@string/contact_detail_img_relationship"
+                    android:src="@drawable/ic_baseline_group_24"
+                    android:tint="@color/colorPrimary" />
+
+            <TextView
+                    android:id="@+id/lbl_relationship"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Family" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/layout_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/contact_detail_form_margin_top"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                    android:id="@+id/img_message"
+                    android:layout_width="@dimen/contact_detail_icon_size"
+                    android:layout_height="@dimen/contact_detail_icon_size"
+                    android:layout_marginEnd="@dimen/contact_detail_icon_margin_end"
+                    android:contentDescription="@string/contact_detail_img_message"
+                    android:src="@drawable/ic_baseline_sms_24"
+                    android:tint="@color/colorPrimary" />
+
+            <TextView
+                    android:id="@+id/lbl_message"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Help, this is just example" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/layout_highlighted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/contact_detail_form_margin_top"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                    android:id="@+id/img_highlighted"
+                    android:layout_width="@dimen/contact_detail_icon_size"
+                    android:layout_height="@dimen/contact_detail_icon_size"
+                    android:layout_marginEnd="@dimen/contact_detail_icon_margin_end"
+                    android:contentDescription="@string/contact_detail_img_highlighted"
+                    android:src="@drawable/ic_baseline_favorite_24"
+                    android:tint="@color/colorPrimary" />
+
+            <TextView
+                    android:id="@+id/lbl_highlighted"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Safety contact" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- region Guides -->
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.90" />
+    <!-- endregion -->
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'idea'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath DefaultConfig.gradle
+        classpath DefaultConfig.kotlinGradle
+        classpath DefaultConfig.navigationArgs
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+idea {
+    module {
+        excludeDirs += file('assets')
+    }
+}

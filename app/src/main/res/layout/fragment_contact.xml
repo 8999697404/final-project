@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".contacts.ContactFragment">
+
+    <!-- region ContactsFilled -->
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_contacts"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_contact" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_add_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_add_24"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_float"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:tint="@android:color/white" />
+    <!-- endregion ContactsFilled -->
+
+    <!-- region ContactsEmpty -->
+    <LinearLayout
+            android:id="@+id/layout_empty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_empty_list"
+                android:textAlignment="center" />
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-100dp"
+                android:contentDescription="@string/contact_empty_list_img_decorator"
+                android:src="@drawable/drawkit_notebook_man_colour_400px" />
+
+        <Button
+                android:id="@+id/btn_add_contact_empty"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-72dp"
+                android:text="@string/contact_add"
+                app:icon="@drawable/ic_baseline_add_24" />
+
+    </LinearLayout>
+    <!-- endregion ContactsEmpty -->
+
+    <!-- region Guides -->
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.90" />
+    <!-- endregion Guides -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

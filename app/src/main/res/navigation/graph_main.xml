@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/graph_main"
+        app:startDestination="@id/nav_home">
+
+    <fragment
+            android:id="@+id/nav_home"
+            android:name="com.luisenricke.helpyourself.home.HomeFragment"
+            android:label="@string/home"
+            tools:layout="@layout/fragment_home" />
+
+    <!-- region Contact -->
+    <fragment
+            android:id="@+id/nav_alert"
+            android:name="com.luisenricke.helpyourself.alert.AlertFragment"
+            android:label="@string/alert"
+            tools:layout="@layout/fragment_alert">
+
+        <action
+                android:id="@+id/action_alert_to_alert_detail"
+                app:destination="@id/alertDetailFragment">
+
+            <argument
+                    android:name="idAlert"
+                    android:defaultValue="0L"
+                    app:argType="long" />
+        </action>
+    </fragment>
+
+    <fragment
+            android:id="@+id/alertDetailFragment"
+            android:name="com.luisenricke.helpyourself.alert.AlertDetailFragment"
+            android:label="@string/alert_detail"
+            tools:layout="@layout/fragment_alert_detail">
+
+        <argument
+                android:name="idAlert"
+                android:defaultValue="0L"
+                app:argType="long" />
+    </fragment>
+    <!-- endregion -->
+
+    <!-- region Contact -->
+    <fragment
+            android:id="@+id/nav_contact"
+            android:name="com.luisenricke.helpyourself.contacts.ContactFragment"
+            android:label="@string/contact"
+            tools:layout="@layout/fragment_contact">
+        <action
+                android:id="@+id/action_contact_to_contact_add"
+                app:destination="@id/contactAddFragment" />
+
+        <action
+                android:id="@+id/action_contact_to_contact_detail"
+                app:destination="@id/contactDetailFragment">
+
+            <argument
+                    android:name="idContact"
+                    android:defaultValue="0L"
+                    app:argType="long" />
+        </action>
+    </fragment>
+
+    <fragment
+            android:id="@+id/contactAddFragment"
+            android:name="com.luisenricke.helpyourself.contacts.ContactAddFragment"
+            android:label="@string/contact_add"
+            tools:layout="@layout/fragment_contact_add" />
+
+    <fragment
+            android:id="@+id/contactDetailFragment"
+            android:name="com.luisenricke.helpyourself.contacts.ContactDetailFragment"
+            android:label="@string/contact_detail"
+            tools:layout="@layout/fragment_contact_detail">
+
+        <argument
+                android:name="idContact"
+                android:defaultValue="0L"
+                app:argType="long" />
+
+        <action
+                android:id="@+id/action_contact_detail_to_contact_edit"
+                app:destination="@id/contactEditFragment">
+
+            <argument
+                    android:name="idContact"
+                    android:defaultValue="0L"
+                    app:argType="long" />
+        </action>
+    </fragment>
+
+    <fragment
+            android:id="@+id/contactEditFragment"
+            android:name="com.luisenricke.helpyourself.contacts.ContactEditFragment"
+            android:label="@string/contact_edit"
+            tools:layout="@layout/fragment_contact_edit">
+
+        <argument
+                android:name="idContact"
+                android:defaultValue="0L"
+                app:argType="long" />
+    </fragment>
+    <!-- endregion -->
+
+    <!-- region Settings -->
+    <fragment
+            android:id="@+id/nav_settings"
+            android:name="com.luisenricke.helpyourself.settings.SettingsFragment"
+            android:label="fragment_settings"
+            tools:layout="@layout/fragment_settings">
+
+        <action
+                android:id="@+id/action_settings_to_privacy_policy"
+                app:destination="@id/privacyPolicyFragment" />
+
+        <action
+            android:id="@+id/action_settings_to_terms_conditions"
+            app:destination="@id/termsConditionsFragment" />
+
+        <action
+                android:id="@+id/action_settings_to_info"
+                app:destination="@id/infoFragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/privacyPolicyFragment"
+            android:name="com.luisenricke.helpyourself.settings.PrivacyPolicyFragment"
+            android:label="@string/settings_privacy_policy"
+            tools:layout="@layout/fragment_privacy_policy" />
+
+    <fragment
+        android:id="@+id/termsConditionsFragment"
+        android:name="com.luisenricke.helpyourself.settings.TermsConditionsFragment"
+        android:label="@string/settings_terms_conditions"
+        tools:layout="@layout/fragment_terms_conditions" />
+
+    <fragment
+            android:id="@+id/infoFragment"
+            android:name="com.luisenricke.helpyourself.settings.InfoFragment"
+            android:label="@string/settings_info"
+            tools:layout="@layout/fragment_info" />
+    <!-- endregion Settings -->
+
+    <fragment
+            android:id="@+id/nav_profile"
+            android:name="com.luisenricke.helpyourself.presentation.ProfileFragment"
+            android:label="@string/profile"
+            tools:layout="@layout/fragment_profile" />
+
+</navigation>
